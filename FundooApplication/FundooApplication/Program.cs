@@ -2,6 +2,7 @@ using BusinessLayer.Interface;
 using BusinessLayer.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using NLog;
@@ -33,6 +34,8 @@ try
     // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
     builder.Services.AddTransient<IUserRepository, UserRepository>();
     builder.Services.AddTransient<IUserBusiness, UserBusiness>();
+    builder.Services.AddTransient<INoteRepository, NoteRepository>();
+    builder.Services.AddTransient<INoteBusiness, NoteBusiness>();
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen(c =>
     {
