@@ -36,6 +36,8 @@ try
     builder.Services.AddTransient<IUserBusiness, UserBusiness>();
     builder.Services.AddTransient<INoteRepository, NoteRepository>();
     builder.Services.AddTransient<INoteBusiness, NoteBusiness>();
+    builder.Services.AddTransient<ILabelRepository, LabelRepository>();
+    builder.Services.AddTransient<ILabelBusiness, LabelBusiness>();
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen(c =>
     {
